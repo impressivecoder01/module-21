@@ -31,3 +31,20 @@ else if(jim>kim && jim> sim){
 else {
     console.log('sim boro')
 }
+function findBoro(a, b, c){
+    if(a>b && a>c){
+    return('kim boro')
+}
+else if(b>a && b> c){
+    return('jim boro')
+}
+else {
+    return('sim boro')
+}
+}
+console.log(kim,jim,sim)
+console.log(findBoro(kim,jim,sim))
+const max = Math.max(3,2,145,675,43,3);
+console.log(max)
+const min = Math.min(342,4,12,546,7,4,-2)
+console.log(min)
