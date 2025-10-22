@@ -30,3 +30,14 @@ function cheapestPhone(object){
     return low;
 }
 console.log(cheapestPhone(mobiles), 's')
+function valueAblePhone(object){
+    let max = object[0]
+    for(const mobile of object){
+        if(mobile.price>max.price){
+            max = mobile
+        }
+        
+    }
+    return max;
+}
+console.log(valueAblePhone(mobiles))
