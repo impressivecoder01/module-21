@@ -28,8 +28,23 @@ console.log(discountPrice(num3))
 
 // ph code
 function discount(quantity){
-
+    if(quantity <=100){
+        const total = quantity * 100;
+        return total;
+    }
+    else if(quantity <= 200){
+        const total = quantity * 90;
+        return total;
+    }
+    else{
+        const total = quantity * 70;
+        return total;
+    }
 }
+console.log(discount(num),'p')
+console.log(discount(num1))
+console.log(discount(num2))
+console.log(discount(num3))
 //chatgpt code
 // function multiLayerDiscount(price, d1, d2, d3) {
 //   let finalPrice = price;
@@ -59,3 +74,38 @@ function discount(quantity){
 // const originalPrice = 1000;
 // const finalPrice = multiLayerDiscount(originalPrice, 10, 5, 3);
 // console.log("Final Price: $" + finalPrice);
+/**
+ * first100 --> 100
+ * 101to200 --> 90
+ * above 200 --> 70
+ */
+function layeredDiscountedTotal(quantity){
+    if(quantity<=100){
+        const total = quantity * 100;
+        return total;
+    }
+    else if(quantity<=200){
+        const find = quantity - 100;
+        const real = 100 - quantity;
+        const now = Math.abs(real)
+        const now2 = now * 100;
+        const total = find * 90;
+        const total2 = now2+ total
+        return total2;
+    }
+    else{
+        const find = quantity - 200;
+        const real = 200 - quantity;
+        const now = Math.abs(real);
+        const now2 = now * 100
+        const total = find * 70;
+        const total2 = now2 + total
+        return total2;
+    }
+}
+const n = 100;
+const m = 200;
+const l = 300;
+console.log(layeredDiscountedTotal(n), 'me')
+console.log(layeredDiscountedTotal(m))
+console.log(layeredDiscountedTotal(l))
